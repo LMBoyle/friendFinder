@@ -20,7 +20,7 @@
         <h1> Survery Questions </h1>
         <hr/>
         <h2><strong> About You </strong></h2>
-        <form>
+        <form method="POST" role="form">
           <div class="form-group">
             <label for="name"> Name (Required) </label>
             <input type="name" class="form-control" id="nameInput" placeholder="John Doe">
@@ -36,9 +36,10 @@
             <p style="font-size: 15px; font-weight: bold"> (Strongly Disagree) <span style="padding-right: 20px"></span> (Strongly Agree) </p>
           </div>
 
-          <div class="row justify-content-around">
+          <!-- New Row -->
+          <div class="row justify-content-center">
             <!-- Question One -->
-            <div class="card col-5 text-center">
+            <div class="card col-5 mr-1 text-center">
               <div class="card-body">
                 <h4> Question One </h4>
               
@@ -72,43 +73,339 @@
             </div>
 
             <!-- Question Two -->
-            <div class="card col-5 text-center">
-                <div class="card-body">
-                  <h4> Question Two </h4>
-                
-                  <p id="ques1"> Question 2 </p>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">
-                    <label class="form-check-label" for="inlineRadio1"> 1 </label>
-                  </div>
-  
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">
-                    <label class="form-check-label" for="inlineRadio2"> 2 </label>
-                  </div>
-  
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3">
-                    <label class="form-check-label" for="inlineRadio3"> 3 </label>
-                  </div>
-  
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="4">
-                    <label class="form-check-label" for="inlineRadio4"> 4 </label>
-                  </div>
-  
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="5">
-                    <label class="form-check-label" for="inlineRadio5"> 5 </label>
-                  </div>
+            <div class="card col-5 ml-1 text-center">
+              <div class="card-body">
+                <h4> Question Two </h4>
+              
+                <p id="ques2"> Question 2 </p>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">
+                  <label class="form-check-label" for="inlineRadio1"> 1 </label>
                 </div>
-              <!-- End Question Two -->
-              </div>
 
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">
+                  <label class="form-check-label" for="inlineRadio2"> 2 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3">
+                  <label class="form-check-label" for="inlineRadio3"> 3 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="4">
+                  <label class="form-check-label" for="inlineRadio4"> 4 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="5">
+                  <label class="form-check-label" for="inlineRadio5"> 5 </label>
+                </div>
+              </div>
+            <!-- End Question Two -->
+            </div>
+          <!-- End Row -->
+          </div>
+
+          <!-- New Row -->
+          <div class="row mt-2 justify-content-center">
+            <!-- Question Three -->
+            <div class="card col-5 mr-1 text-center">
+              <div class="card-body">
+                <h4> Question Three </h4>
+              
+                <p id="ques3"> Question 3 </p>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">
+                  <label class="form-check-label" for="inlineRadio1"> 1 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">
+                  <label class="form-check-label" for="inlineRadio2"> 2 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3">
+                  <label class="form-check-label" for="inlineRadio3"> 3 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="4">
+                  <label class="form-check-label" for="inlineRadio4"> 4 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="5">
+                  <label class="form-check-label" for="inlineRadio5"> 5 </label>
+                </div>
+              </div>
+            <!-- End Question Three -->
+            </div>
+
+            <!-- Question Four -->
+            <div class="card col-5 ml-1 text-center">
+              <div class="card-body">
+                <h4> Question Four </h4>
+              
+                <p id="ques4"> Question 4 </p>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">
+                  <label class="form-check-label" for="inlineRadio1"> 1 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">
+                  <label class="form-check-label" for="inlineRadio2"> 2 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3">
+                  <label class="form-check-label" for="inlineRadio3"> 3 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="4">
+                  <label class="form-check-label" for="inlineRadio4"> 4 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="5">
+                  <label class="form-check-label" for="inlineRadio5"> 5 </label>
+                </div>
+              </div>
+            <!-- End Question Four -->
+            </div>
+          <!-- End Row -->
+          </div>
+
+          <!-- New Row -->
+          <div class="row mt-2 justify-content-center">
+            <!-- Question Five -->
+            <div class="card col-5 mr-1 text-center">
+              <div class="card-body">
+                <h4> Question Five </h4>
+              
+                <p id="ques5"> Question 5 </p>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">
+                  <label class="form-check-label" for="inlineRadio1"> 1 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">
+                  <label class="form-check-label" for="inlineRadio2"> 2 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3">
+                  <label class="form-check-label" for="inlineRadio3"> 3 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="4">
+                  <label class="form-check-label" for="inlineRadio4"> 4 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="5">
+                  <label class="form-check-label" for="inlineRadio5"> 5 </label>
+                </div>
+              </div>
+            <!-- End Question Five -->
+            </div>
+
+            <!-- Question Six -->
+            <div class="card col-5 ml-1 text-center">
+              <div class="card-body">
+                <h4> Question Six </h4>
+              
+                <p id="ques6"> Question 6 </p>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">
+                  <label class="form-check-label" for="inlineRadio1"> 1 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">
+                  <label class="form-check-label" for="inlineRadio2"> 2 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3">
+                  <label class="form-check-label" for="inlineRadio3"> 3 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="4">
+                  <label class="form-check-label" for="inlineRadio4"> 4 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="5">
+                  <label class="form-check-label" for="inlineRadio5"> 5 </label>
+                </div>
+              </div>
+            <!-- End Question Six -->
+            </div>
+          <!-- End Row -->
+          </div>
+
+          <!-- New Row -->
+          <div class="row mt-2 justify-content-center">
+            <!-- Question Seven -->
+            <div class="card col-5 mr-1 text-center">
+              <div class="card-body">
+                <h4> Question Seven </h4>
+              
+                <p id="ques7"> Question 7 </p>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">
+                  <label class="form-check-label" for="inlineRadio1"> 1 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">
+                  <label class="form-check-label" for="inlineRadio2"> 2 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3">
+                  <label class="form-check-label" for="inlineRadio3"> 3 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="4">
+                  <label class="form-check-label" for="inlineRadio4"> 4 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="5">
+                  <label class="form-check-label" for="inlineRadio5"> 5 </label>
+                </div>
+              </div>
+            <!-- End Question Seven -->
+            </div>
+
+            <!-- Question Eight -->
+            <div class="card col-5 ml-1 text-center">
+              <div class="card-body">
+                <h4> Question Eight </h4>
+              
+                <p id="ques8"> Question 8 </p>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">
+                  <label class="form-check-label" for="inlineRadio1"> 1 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">
+                  <label class="form-check-label" for="inlineRadio2"> 2 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3">
+                  <label class="form-check-label" for="inlineRadio3"> 3 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="4">
+                  <label class="form-check-label" for="inlineRadio4"> 4 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="5">
+                  <label class="form-check-label" for="inlineRadio5"> 5 </label>
+                </div>
+              </div>
+            <!-- End Question Eight -->
+            </div>
+          <!-- End Row -->
+          </div>
+
+          <!-- New Row -->
+          <div class="row mt-2 justify-content-center">
+            <!-- Question Nine -->
+            <div class="card col-5 mr-1 text-center">
+              <div class="card-body">
+                <h4> Question Nine </h4>
+              
+                <p id="ques9"> Question 9 </p>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">
+                  <label class="form-check-label" for="inlineRadio1"> 1 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">
+                  <label class="form-check-label" for="inlineRadio2"> 2 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3">
+                  <label class="form-check-label" for="inlineRadio3"> 3 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="4">
+                  <label class="form-check-label" for="inlineRadio4"> 4 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="5">
+                  <label class="form-check-label" for="inlineRadio5"> 5 </label>
+                </div>
+              </div>
+            <!-- End Question Nine -->
+            </div>
+
+            <!-- Question Ten -->
+            <div class="card col-5 ml-1 text-center">
+              <div class="card-body">
+                <h4> Question Ten </h4>
+              
+                <p id="ques10"> Question 10 </p>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">
+                  <label class="form-check-label" for="inlineRadio1"> 1 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">
+                  <label class="form-check-label" for="inlineRadio2"> 2 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3">
+                  <label class="form-check-label" for="inlineRadio3"> 3 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="4">
+                  <label class="form-check-label" for="inlineRadio4"> 4 </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="5">
+                  <label class="form-check-label" for="inlineRadio5"> 5 </label>
+                </div>
+              </div>
+            <!-- End Question Ten -->
+            </div>
           <!-- End Row -->
           </div>
         <!-- End Form -->
         </form>
+
+        <br/>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary btn-md" id="findBtn"> Find Me a Friend! </button>
+        </div>
+
+        <br/>
+
       <!-- End Container -->
       </div>
   </body>
