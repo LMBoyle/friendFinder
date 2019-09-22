@@ -2,34 +2,21 @@
 
 var express = require("express");
 var path = require("path");
+var bodyParser = require("body-parser");
 
 // Express ==================================================================
 
 var app = express();
 var PORT = process.env.PORT || 1745;
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
 
-// Routes ===================================================================
+// Routes ==================================================================
 
-app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "/app/public/home.html"));
-});
-
-app.get("/survey", function(req, res) {
-  res.sendFile(path.join(__dirname, "/app/public/survey.html"));
-});
-
-// API Routes
-app.get("/api/", function(req, res) {
-  return res.json(characters);
-});
-
-// All Other Routes
-app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "/app/public/home.html"))
-});
+require("./app/routes/apiRoutes")(app);
+require("./app/routes/htmlRoutes")(app);
 
 // Listen ===================================================================
 
