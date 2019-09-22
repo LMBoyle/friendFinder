@@ -12,6 +12,8 @@ module.exports = function(app) {
 
   // Add a new friend
   app.post("/api/friends", function(req, res) {
+    // Get users data
+    var user = req.body
     
   })
 }
