@@ -5,12 +5,12 @@ var path = require("path");
 // Export Routes ============================================================
 
 module.exports = function(app) {
-  // Survey Page
+  // Survey page
   app.get("/survey", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/survey.html"));
   });
 
-  // All Other Routes
+  // All other routes default to home
   app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/home.html"))
   });
