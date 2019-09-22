@@ -403,17 +403,16 @@
             </div>
           <!-- End Row -->
           </div>
+
+          <br/>
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-success btn-md submit" id="findBtn"> Find Me a Friend! </button>
+          </div>
+
+          <br/>
         <!-- End Form -->
         </form>
-
-        <br/>
-
-        <div class="text-center">
-          <button type="submit" class="btn btn-success btn-md" id="findBtn"> Find Me a Friend! </button>
-        </div>
-
-        <br/>
-
       <!-- End Container -->
       </div>
 
@@ -456,24 +455,23 @@
 
           // Post to server
           $.post("/api/friends", newFriend, function(data) {
+            console.log("In post")
             alert("Finding you a friend...");
-
-            $("#nameInput").val("");
-            $("#photoInput").val("");
-            $("input[name='questionOne']").prop("checked", false);
-            $("input[name='questionTwo']").prop("checked", false);
-            $("input[name='questionThree']").prop("checked", false);
-            $("input[name='questionFour']").prop("checked", false);
-            $("input[name='questionFive']").prop("checked", false);
-            $("input[name='questionSix']").prop("checked", false);
-            $("input[name='questionSeven']").prop("checked", false);
-            $("input[name='questionEight']").prop("checked", false);
-            $("input[name='questionNine']").prop("checked", false);
-            $("input[name='questionTen']").prop("checked", false);
           })
-        }
-          
 
+          $("#nameInput").val("");
+          $("#photoInput").val("");
+          $("input[name='question1']").prop("checked", false);
+          $("input[name='question2']").prop("checked", false);
+          $("input[name='question3']").prop("checked", false);
+          $("input[name='question4']").prop("checked", false);
+          $("input[name='question5']").prop("checked", false);
+          $("input[name='question6']").prop("checked", false);
+          $("input[name='question7']").prop("checked", false);
+          $("input[name='question8']").prop("checked", false);
+          $("input[name='question9']").prop("checked", false);
+          $("input[name='question10']").prop("checked", false);
+          }
 
         // Call pushScores function on button click
         $("#findBtn").on("click", pushScores)
