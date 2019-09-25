@@ -5,13 +5,13 @@ var friendData = require("../data/friends.js")
 // Export Routes ============================================================
 
 module.exports = function(app) {
-  // API GET ================================================================
+  // API GET ----------------------------------------------------------------
   // Get the list of friends
   app.get("/api/friends", function(req, res) {
     res.json(friendData);
   });
 
-  // API POST ===============================================================
+  // API POST ---------------------------------------------------------------
   // Add a new friend and find match
   app.post("/api/friends", function(req, res) {
     // Current User
