@@ -432,14 +432,14 @@
             // Grab the name for each group of input buttons per question
             var radioValue = $("input[name='question" + i + "']:checked").val();
             // If none of the inputs are checked
-            /*if(!radioValue){
+            if(!radioValue){
               // TODO If question isn't answered, highlight red
               return alert("You didn't answer all the questions")
             }
             // If user selected an input, push to scores array
             else if (radioValue) {
-              newFriend.scores.push(radioValue)
-            }*/
+              newFriend.scores.push(parseInt(radioValue))
+            }
           }
           pushFriendData();
         }
@@ -458,7 +458,7 @@
 
           // Post to server
           $.post("/api/friends", newFriend, function(data) {
-            console.log("In post")
+            console.log(data)
           })
 
           $("#nameInput").val("");

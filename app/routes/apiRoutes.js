@@ -21,17 +21,19 @@ module.exports = function(app) {
     // Start with the max difference
     var maxDifference = 40;
 
-    // TODO Go through each person and compare scores
+    // Go through each person and compare scores
     for (var f = 0; f < friendData.length; f++) {
       var currDiff = 0;
-      // TODO For each friend compare scores
+      // For each friend compare scores
       for (var s = 0; s < friendData[f].scores.length; s++) {
-        currDiff = Math.abs(user.scores[s] - friendData[f].scores[s])
+        currDiff = Math.abs(parseInt(user.scores[s]) - friendData[f].scores[s])
       }
 
-      // If current difference is less than the max difference, update the friend
+      // If current difference is less than the max difference...
       if (currDiff < maxDifference) {
+        // update the friend &...
         friendIndex = f;
+        // Set a new max different
         maxDifference = currDiff;
       }
     }
