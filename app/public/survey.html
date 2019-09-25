@@ -428,10 +428,7 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body">
-                <span id="friendName"> John Doe </span>
-                <br/>
-                <img id="friendPhoto" src="https://via.placeholder.com/150" alt="friendHeadshot"></img>
+              <div class="modal-body text-center" id="friendModalBody">
               </div>
             </div>
           </div>
@@ -457,8 +454,6 @@
         </div>
       <!-- End Container -->
       </div>
-
-
 
       <!-- Script -->
       <script type="text/javascript">
@@ -516,25 +511,28 @@
           else if (radioChecked && $("#nameInput").val().trim() !== "" && $("#photoInput").val().trim() !== "") {
             newFriend.scores.push(parseInt(radioChecked))
             pushFriendData();
-            $('#friendModal').modal('show');
           }
         }
         
         // Get the rest of the data and post to server
         function pushFriendData() {
-          // TODO if name is not filled out
-          // TODO if photo is not filled out
-
           // Get name
           newFriend.name = $("#nameInput").val().trim();
           // Get photo
           newFriend.photo = $("#photoInput").val().trim();
 
-          console.log(newFriend)
-
           // Post to server
           $.post("/api/friends", newFriend, function(data) {
             console.log(data)
+            var modalBody = $("#friendModalBody");
+            var friendName = "<p> Friend Name: <strong>" + data.name + "</strong></p><br/>"
+            var friendImg = "<img src='" + data.photo + "' alt='friend headshot'></img>"
+            // Show friend name
+            modalBody.append(friendName);
+            // Show friend image
+            modalBody.append(friendImg);
+            // Show friend modal
+            $('#friendModal').modal('show');
           })
 
           $("#nameInput").val("");
