@@ -55,7 +55,7 @@
               <div class="card-body">
                 <h4> Question One </h4>
               
-                <p id="ques1"> Question 1 </p>
+                <p id="ques1"> You enjoy meeting new people. </p>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="question1" id="inlineRadio1" value="1">
                   <label class="form-check-label" for="inlineRadio1"> 1 </label>
@@ -89,7 +89,7 @@
               <div class="card-body">
                 <h4> Question Two </h4>
               
-                <p id="ques2"> Question 2 </p>
+                <p id="ques2"> You enjoy trying new things. </p>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="question2" id="inlineRadio1" value="1">
                   <label class="form-check-label" for="inlineRadio1"> 1 </label>
@@ -127,7 +127,7 @@
               <div class="card-body">
                 <h4> Question Three </h4>
               
-                <p id="ques3"> Question 3 </p>
+                <p id="ques3"> You consider other's feelings. </p>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="question3" id="inlineRadio1" value="1">
                   <label class="form-check-label" for="inlineRadio1"> 1 </label>
@@ -161,7 +161,7 @@
               <div class="card-body">
                 <h4> Question Four </h4>
               
-                <p id="ques4"> Question 4 </p>
+                <p id="ques4"> You conceal your feelings. </p>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="question4" id="inlineRadio1" value="1">
                   <label class="form-check-label" for="inlineRadio1"> 1 </label>
@@ -199,7 +199,7 @@
               <div class="card-body">
                 <h4> Question Five </h4>
               
-                <p id="ques5"> Question 5 </p>
+                <p id="ques5"> You get nervous before big events. </p>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="question5" id="inlineRadio1" value="1">
                   <label class="form-check-label" for="inlineRadio1"> 1 </label>
@@ -233,7 +233,7 @@
               <div class="card-body">
                 <h4> Question Six </h4>
               
-                <p id="ques6"> Question 6 </p>
+                <p id="ques6"> You prefer long-term goals to short-term. </p>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="question6" id="inlineRadio1" value="1">
                   <label class="form-check-label" for="inlineRadio1"> 1 </label>
@@ -271,7 +271,7 @@
               <div class="card-body">
                 <h4> Question Seven </h4>
               
-                <p id="ques7"> Question 7 </p>
+                <p id="ques7"> You prefer time alone or in small groups. </p>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="question7" id="inlineRadio1" value="1">
                   <label class="form-check-label" for="inlineRadio1"> 1 </label>
@@ -305,7 +305,7 @@
               <div class="card-body">
                 <h4> Question Eight </h4>
               
-                <p id="ques8"> Question 8 </p>
+                <p id="ques8"> You prefer intelligence over looks. </p>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="question8" id="inlineRadio1" value="1">
                   <label class="form-check-label" for="inlineRadio1"> 1 </label>
@@ -343,7 +343,7 @@
               <div class="card-body">
                 <h4> Question Nine </h4>
               
-                <p id="ques9"> Question 9 </p>
+                <p id="ques9"> You enjoy taking risks. </p>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="question9" id="inlineRadio1" value="1">
                   <label class="form-check-label" for="inlineRadio1"> 1 </label>
@@ -377,7 +377,7 @@
               <div class="card-body">
                 <h4> Question Ten </h4>
               
-                <p id="ques10"> Question 10 </p>
+                <p id="ques10"> You prefer dogs over cats. </p>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="question10" id="inlineRadio1" value="1">
                   <label class="form-check-label" for="inlineRadio1"> 1 </label>
@@ -481,7 +481,7 @@
             // If no name is entered, highlight red
             if ($("#nameInput").val().trim() === "") {
               $("#nameInput").css("border", "1px solid red");
-              alertText.append("Please Enter a Name! <br/>");
+              alertText.append("How are you going to make friends without a name? <br/><br/>");
             }
             else {
               $("#nameInput").css("border", "1px solid #ced4da")
@@ -490,12 +490,12 @@
             // If no photo is entered, highlight red
             if ($("#photoInput").val().trim() === "") {
               $("#photoInput").css("border", "1px solid red");
-              alertText.append("Please Enter a Photo! <br/>");
+              alertText.append("You need to add a photo! Let your new friend see your pretty face :D <br/><br/>");
             }
             else {
               $("#photoInput").css("border", "1px solid #ced4da")
             }
-            alertText.append("Please Answer All The Questions! <br/>")
+            alertText.append("We can't match you if we don't know <strong> everything </strong> about you! Please answer all the questions! <br/>")
             // If question isn't answered, highlight red
             for (var q = 0; q < 11; q++) {
               var radioValue = $("input[name='question" + q + "']:checked").val();
@@ -523,8 +523,20 @@
         function pushFriendData() {
           // Get name
           newFriend.name = $("#nameInput").val().trim();
+          console.log(newFriend.name)
+          newFriend.name = toTitleCase(newFriend.name)
+          console.log(newFriend.name)
           // Get photo
           newFriend.photo = $("#photoInput").val().trim();
+
+          // Change name to proper case if user
+          function toTitleCase(str) {
+            str = str.toLowerCase().split(' ');
+            for (var i = 0; i < str.length; i++) {
+              str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+            }
+            return str.join(' ');
+          };
 
           // Post to server
           $.post("/api/friends", newFriend, function(data) {
