@@ -440,13 +440,13 @@
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="alertTitle"> Oops, you haven't answered all the questions! </h5>
+                <h5 class="modal-title" id="alertTitle"> Oops, you missed something! </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body">
-                <span id="alertText"> Complete the survey to get a friend </span>
+                <span id="alertText"></span>
               </div>
             </div>
           </div>
@@ -475,12 +475,13 @@
 
           // If none of the inputs are checked or name/photo are not entered
           if (!radioChecked || $("#nameInput").val().trim() === "" || $("#photoInput").val().trim() === ""){
-            // Show Modal
-            $('#alertModal').modal('show');
+            var alertText = $("#alertText")
+            alertText.html("");
 
             // If no name is entered, highlight red
             if ($("#nameInput").val().trim() === "") {
-              $("#nameInput").css("border", "1px solid red")
+              $("#nameInput").css("border", "1px solid red");
+              alertText.append("Please Enter a Name! <br/>");
             }
             else {
               $("#nameInput").css("border", "1px solid #ced4da")
@@ -488,12 +489,13 @@
 
             // If no photo is entered, highlight red
             if ($("#photoInput").val().trim() === "") {
-              $("#photoInput").css("border", "1px solid red")
+              $("#photoInput").css("border", "1px solid red");
+              alertText.append("Please Enter a Photo! <br/>");
             }
             else {
               $("#photoInput").css("border", "1px solid #ced4da")
             }
-
+            alertText.append("Please Answer All The Questions! <br/>")
             // If question isn't answered, highlight red
             for (var q = 0; q < 11; q++) {
               var radioValue = $("input[name='question" + q + "']:checked").val();
@@ -505,6 +507,9 @@
                 $(".q" + q).css("border", "1px solid rgba(0,0,0,.125)")
               }
             }
+
+            // Show Modal
+            $('#alertModal').modal('show');
             return;
           }
           // If user selected an input, push to scores array
