@@ -4,7 +4,7 @@
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon"/>
-    <title> Friend Finder Survery </title>
+    <title> Friend Finder Survey </title>
 
     <!-- CSS -->
     <!-- Bootstrap -->
@@ -22,7 +22,7 @@
 
   <body>
       <div class="container">
-        <h1> Survery Questions </h1>
+        <h1> Survey Questions </h1>
         <hr/>
         <h2><strong> About You </strong></h2>
         <form method="POST" role="form">
@@ -471,65 +471,64 @@
           for (var i = 1; i < 11; i++) {
             // Grab the name for each group of input buttons per question
             var radioChecked = $("input[name='question" + i + "']:checked").val();
-          }
+            
+            // If none of the inputs are checked or name/photo are not entered
+            if (!radioChecked || $("#nameInput").val().trim() === "" || $("#photoInput").val().trim() === "") {
+              var alertText = $("#alertText")
+              alertText.html("");
 
-          // If none of the inputs are checked or name/photo are not entered
-          if (!radioChecked || $("#nameInput").val().trim() === "" || $("#photoInput").val().trim() === ""){
-            var alertText = $("#alertText")
-            alertText.html("");
-
-            // If no name is entered, highlight red
-            if ($("#nameInput").val().trim() === "") {
-              $("#nameInput").css("border", "1px solid red");
-              alertText.append("How are you going to make friends without a name? <br/><br/>");
-            }
-            else {
-              $("#nameInput").css("border", "1px solid #ced4da")
-            }
-
-            // If no photo is entered, highlight red
-            if ($("#photoInput").val().trim() === "") {
-              $("#photoInput").css("border", "1px solid red");
-              alertText.append("You need to add a photo! Let your new friend see your pretty face :D <br/><br/>");
-            }
-            else {
-              $("#photoInput").css("border", "1px solid #ced4da")
-            }
-            alertText.append("We can't match you if we don't know <strong> everything </strong> about you! Please answer all the questions! <br/>")
-            // If question isn't answered, highlight red
-            for (var q = 0; q < 11; q++) {
-              var radioValue = $("input[name='question" + q + "']:checked").val();
-              
-              if (radioValue === undefined) {
-                $(".q" + q).css("border", "1px solid red")
+              // If no name is entered, highlight red
+              if ($("#nameInput").val().trim() === "") {
+                $("#nameInput").css("border", "1px solid red");
+                alertText.append("How are you going to make friends without a name? <br/><br/>");
               }
               else {
-                $(".q" + q).css("border", "1px solid rgba(0,0,0,.125)")
+                $("#nameInput").css("border", "1px solid #ced4da")
               }
-            }
 
-            // Show Modal
-            $('#alertModal').modal('show');
-            return;
-          }
-          // If user selected an input, push to scores array
-          else if (radioChecked && $("#nameInput").val().trim() !== "" && $("#photoInput").val().trim() !== "") {
-            newFriend.scores.push(parseInt(radioChecked))
-            pushFriendData();
-          }
+              // If no photo is entered, highlight red
+              if ($("#photoInput").val().trim() === "") {
+                $("#photoInput").css("border", "1px solid red");
+                alertText.append("You need to add a photo! Let your new friend see your pretty face :D <br/><br/>");
+              }
+              else {
+                $("#photoInput").css("border", "1px solid #ced4da")
+              }
+
+              // If question isn't answered, highlight red
+              for (var q = 0; q < 11; q++) {
+                var radioValue = $("input[name='question" + q + "']:checked").val();
+                
+                if (radioValue === undefined) {
+                  $(".q" + q).css("border", "1px solid red")
+                }
+                else {
+                  $(".q" + q).css("border", "1px solid rgba(0,0,0,.125)")
+                }
+              }
+              // Alert user there's unanswered questions
+              alertText.append("We can't match you if we don't know <strong> everything </strong> about you! Please answer all the questions! <br/>")
+
+              // Show Modal
+              $('#alertModal').modal('show');
+              return;
+            }
+            // If user selected an input, push to scores array
+            else if (radioChecked && $("#nameInput").val().trim() !== "" && $("#photoInput").val().trim() !== "") {
+              newFriend.scores.push(parseInt(radioChecked))
+            };
+          };
+          pushFriendData();
         }
         
         // Get the rest of the data and post to server
         function pushFriendData() {
           // Get name
-          newFriend.name = $("#nameInput").val().trim();
-          console.log(newFriend.name)
-          newFriend.name = toTitleCase(newFriend.name)
-          console.log(newFriend.name)
+          newFriend.name = toTitleCase($("#nameInput").val().trim());
           // Get photo
           newFriend.photo = $("#photoInput").val().trim();
 
-          // Change name to proper case if user
+          // Change name to proper case
           function toTitleCase(str) {
             str = str.toLowerCase().split(' ');
             for (var i = 0; i < str.length; i++) {
@@ -542,6 +541,8 @@
           $.post("/api/friends", newFriend, function(data) {
             console.log(data)
             var modalBody = $("#friendModalBody");
+            modalBody.html = "";
+
             var friendName = "<p> Friend Name: <strong>" + data.name + "</strong></p><br/>"
             var friendImg = "<img src='" + data.photo + "' alt='friend headshot'></img>"
             // Show friend name
