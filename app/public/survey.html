@@ -18,6 +18,14 @@
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <!-- Style -->
+    <style>
+      input[type=radio] {
+        width: 16px;
+        height: 16px;
+      }
+    </style>
   </head>
 
   <body>
@@ -51,7 +59,7 @@
           <!-- New Row -->
           <div class="row justify-content-center">
             <!-- Question One -->
-            <div class="card col-5 mr-1 text-center q1">
+            <div class="card col-md-5 col-sm-12 mr-md-1 mr-sm-0 mb-md-0 mb-sm-1 text-center q1">
               <div class="card-body">
                 <h4> Question One </h4>
               
@@ -85,7 +93,7 @@
             </div>
 
             <!-- Question Two -->
-            <div class="card col-5 ml-1 text-center q2">
+            <div class="card col-md-5 col-sm-12 ml-md-1 ml-sm-0 mt-md-0 mt-sm-1 text-center q2">
               <div class="card-body">
                 <h4> Question Two </h4>
               
@@ -123,7 +131,7 @@
           <!-- New Row -->
           <div class="row mt-2 justify-content-center">
             <!-- Question Three -->
-            <div class="card col-5 mr-1 text-center q3">
+            <div class="card col-md-5 col-sm-12 mr-md-1 mr-sm-0 mb-md-0 mb-sm-1 text-center q3">
               <div class="card-body">
                 <h4> Question Three </h4>
               
@@ -157,7 +165,7 @@
             </div>
 
             <!-- Question Four -->
-            <div class="card col-5 ml-1 text-center q4">
+            <div class="card col-md-5 col-sm-12 ml-md-1 ml-sm-0 mt-md-0 mt-sm-1 text-center q4">
               <div class="card-body">
                 <h4> Question Four </h4>
               
@@ -195,7 +203,7 @@
           <!-- New Row -->
           <div class="row mt-2 justify-content-center">
             <!-- Question Five -->
-            <div class="card col-5 mr-1 text-center q5">
+            <div class="card col-md-5 col-sm-12 mr-md-1 mr-sm-0 mb-md-0 mb-sm-1 text-center q5">
               <div class="card-body">
                 <h4> Question Five </h4>
               
@@ -229,7 +237,7 @@
             </div>
 
             <!-- Question Six -->
-            <div class="card col-5 ml-1 text-center q6">
+            <div class="card col-md-5 col-sm-12 ml-md-1 ml-sm-0 mt-md-0 mt-sm-1 text-center q6">
               <div class="card-body">
                 <h4> Question Six </h4>
               
@@ -267,7 +275,7 @@
           <!-- New Row -->
           <div class="row mt-2 justify-content-center">
             <!-- Question Seven -->
-            <div class="card col-5 mr-1 text-center q7">
+            <div class="card col-md-5 col-sm-12 mr-md-1 mr-sm-0 mb-md-0 mb-sm-1 text-center q7">
               <div class="card-body">
                 <h4> Question Seven </h4>
               
@@ -301,7 +309,7 @@
             </div>
 
             <!-- Question Eight -->
-            <div class="card col-5 ml-1 text-center q8">
+            <div class="card col-md-5 col-sm-12 ml-md-1 ml-sm-0 mt-md-0 mt-sm-1 text-center q8">
               <div class="card-body">
                 <h4> Question Eight </h4>
               
@@ -339,7 +347,7 @@
           <!-- New Row -->
           <div class="row mt-2 justify-content-center">
             <!-- Question Nine -->
-            <div class="card col-5 mr-1 text-center q9">
+            <div class="card col-md-5 col-sm-12 mr-md-1 mr-sm-0 mb-md-0 mb-sm-1 text-center q9">
               <div class="card-body">
                 <h4> Question Nine </h4>
               
@@ -373,7 +381,7 @@
             </div>
 
             <!-- Question Ten -->
-            <div class="card col-5 ml-1 text-center q10">
+            <div class="card col-md-5 col-sm-12 ml-md-1 ml-sm-0 mt-md-0 mt-sm-1 text-center q10">
               <div class="card-body">
                 <h4> Question Ten </h4>
               
@@ -520,7 +528,7 @@
           };
           pushFriendData();
         }
-        
+
         // Get the rest of the data and post to server
         function pushFriendData() {
           // Get name
