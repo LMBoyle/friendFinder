@@ -14,6 +14,10 @@ Enter your name and link to a photo of yourself. Then, answer ten simple questio
 ### NPM Packages
 * Express
 
+## Demo
+
+![Demo Gif](app/public/assets/images/demo.gif)
+
 ## Links
 [Deployed Link](https://friend-finder-lmb.herokuapp.com/)
 

@@ -1,6 +1,8 @@
 // Dependencies =============================================================
 
 var express = require("express");
+// var favicon = require('serve-favicon')
+// var path = require('path')
 
 // Express ==================================================================
 
@@ -9,6 +11,8 @@ var PORT = process.env.PORT || 1745;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+// app.use(express.static('public'));
+// app.use(favicon(__dirname + '/app/public/assets/images/favicon.ico'));
 
 // Routes ==================================================================
 
