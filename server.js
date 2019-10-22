@@ -11,7 +11,7 @@ var PORT = process.env.PORT || 1745;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// app.use(express.static('public'));
+app.use(express.static('app/public'));
 // app.use(favicon(__dirname + '/app/public/assets/images/favicon.ico'));
 
 // Routes ==================================================================
