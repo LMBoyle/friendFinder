@@ -1,13 +1,12 @@
-# Friend Finder
-Find a new friend! Maybe even something more!
+# [Friend Finder](https://friend-finder-lmb.herokuapp.com/)
+
+Answer a few simple questions and find a new friend! Maybe even something more!
 
 ## Instructions
+
 Enter your name and link to a photo of yourself. Then, answer ten simple questions before being shown your perfect match!
 
-## What It Teaches
-How to use express and heroku to make an app that saves data then retrieves it
-
-## Languages/Technologies 
+## Built With...
 * HTML
 * Bootstrap
 * JavaScript
@@ -18,13 +17,11 @@ How to use express and heroku to make an app that saves data then retrieves it
 * Express
 
 ## Demo
+
 ![Demo Gif](app/public/assets/images/friendDemo.gif)
 
 ## Future Development/Improvements
 - [ ] Clear modal out if user doesn't reload page
 - [ ] Adjust function math to find matches
 
-## Links
-[Deployed Link](https://friend-finder-lmb.herokuapp.com/)
-
-[Portfolio](https://lmboyle.github.io/)
+&copy; 2019 [Luke Boyle](https://lmboyle.github.io/)
